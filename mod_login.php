@@ -59,11 +59,11 @@ if((isset($_GET['C']) && isset($_COOKIE['logid'])) || (isset($_POST['email']) &&
 							header("Location: index.php");
 						} else{
 							$_SESSION['erroL'] = "Qualcosa è andato storto!";
-							header("Location: form.php#login");
+							header("Location: login.php");
 						}					
 					} else{
 						$_SESSION['erroL'] = "Qualcosa è andato storto!";
-						header("Location: form.php#login");
+						header("Location: login.php");
 					}
 				}else{
 					header("Location: index.php");
@@ -71,14 +71,14 @@ if((isset($_GET['C']) && isset($_COOKIE['logid'])) || (isset($_POST['email']) &&
 
 			} else{
 				$_SESSION['erroL'] = "L’email o la password sono sbagliati.";
-				header("Location: form.php#login");
+				header("Location: login.php");
 			}
 		} else{
 			if(isset($logid) && isset($expiry)){
 				header("Location: logout.php?out");
 			}else{
 				$_SESSION['erroL'] = "L’email o la password sono sbagliati.";
-				header("Location: form.php#login");
+				header("Location: login.php");
 			}
 		}
 		$sql->close();
@@ -86,7 +86,7 @@ if((isset($_GET['C']) && isset($_COOKIE['logid'])) || (isset($_POST['email']) &&
 		$connection->close();
 	} else{
 		$_SESSION['erroL'] = "Attenzione! Inserire i dati richiesti.";
-		header("Location: form.php#login");
+		header("Location: login.php");
 	}
 } else{
 	header("Location: logout.php?out");

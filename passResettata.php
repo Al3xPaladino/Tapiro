@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-	<?php
-		session_start();
-		require 'secure/notForLog.php';
-		if(!isset($_GET['email']) || !isset($_GET['id']))
-			//header('Location: index.php')
-	?>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cambio Password</title>
+	<title>Form</title>
 	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
+  <?php session_start(); require 'secure/notForLog.php'; ?>
   <link rel="stylesheet" type="text/css" href="css/form.css">
-  <script src="js/validatePassword.js"></script>
+  <script src="js/validateLogin.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
+<body>
 	<img loading="lazy" draggable="false" onclick="window.location.href='index.php'" src="img/logo_login.svg" class="logo">
 	  
 	<div class="box-form">
 
 		<!--form-container-->
-	  <!--<ul class="tabs">
+	  <ul class="tabs">
 	    <li>
 	      <a class="active">CAMBIA PASSWORD</a>
 	    </li>
-	  </ul>-->
+	  </ul>
 
 
 	  <!--form-action-->

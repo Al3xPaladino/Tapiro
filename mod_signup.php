@@ -15,7 +15,7 @@ if(isset($_POST['firstname'])&&isset($_POST['lastname'])&&isset($_POST['email'])
 	if (strlen($email)!=0 && strlen($password)!=0 && filter_var($email, FILTER_VALIDATE_EMAIL)){
 		if($password!=$confirm){
 			$_SESSION['erroR'] = "Password non uguale!";
-			header("Location: form.php#register");
+			header("Location: signup.php");
 		} else{
 			include "components/connection.php";
 			$connection = new mysqli($hostData, $userData, $paswData, $database);
@@ -30,15 +30,15 @@ if(isset($_POST['firstname'])&&isset($_POST['lastname'])&&isset($_POST['email'])
 				$respo = $sql->execute();
 				if($respo == 1){
 					$_SESSION['erroL'] = "Registrazione effettuata!";
-					header("Location: form.php#login");
+					header("Location: login.php");
 				}
 				else{
 					$_SESSION['erroR'] = "L’email o la password sono sbagliati.";
-					header("Location: form.php#register");
+					header("Location: signup.php");
 				}
 			}catch(Exception $e){
 				$_SESSION['erroR'] = "Errore inserimento utente!";
-				header("Location: form.php#register");
+				header("Location: signup.php");
 			}
 		}
 		$sql->close();
@@ -46,7 +46,7 @@ if(isset($_POST['firstname'])&&isset($_POST['lastname'])&&isset($_POST['email'])
 		$connection->close();
 	} else{
 		$_SESSION['erroR'] = "L’email o la password sono sbagliati.";
-		header("Location: form.php#register");
+		header("Location: signup.php");
 	}
 
 } else{

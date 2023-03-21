@@ -32,14 +32,14 @@ if(isset($_POST['email'])&&isset($_POST['id'])&&isset($_POST['pass'])&&isset($_P
 
 				if($sql->execute()){
 					$_SESSION['erroL'] = "Password resettata!";
-					header("Location: form.php#login");					
+					header("Location: passResettata.php");					
 				} else{
 					$_SESSION['erroL'] = "Errore reset Password!";
-					header("Location: form.php#login");
+					header("Location: login.php");
 				}
 			} else{
 				$_SESSION['erroL'] = "Errore reset Password!";
-				header("Location: form.php#login");	
+				header("Location: login.php");	
 			}
 			$sql->close();
 			$result->free();
@@ -47,7 +47,7 @@ if(isset($_POST['email'])&&isset($_POST['id'])&&isset($_POST['pass'])&&isset($_P
 		}
 	} else{
 		$_SESSION['erroL'] = "Errore reset Password!";
-		header("Location: form.php#login");
+		header("Location: login.php");
 	}
 } else{
 	$_SESSION['erroP'] = "Password non valide!";
