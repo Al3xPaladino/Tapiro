@@ -12,6 +12,7 @@ function validateLogin() {
     res.setAttribute("class", "erro");
     res.innerText = "Attenzione! Inserire i dati richiesti.";
     document.forms["loginForm"].reset();
+
     setTimeout(function(){ document.getElementById('resL').removeAttribute("class") }, 5000);
     return false;
   }

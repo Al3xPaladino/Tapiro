@@ -29,56 +29,63 @@
 			<hr id="hr_log">
 	  	</ul>
 
-	  <div id="login" class="form-action show">
+		<div id="login" class="form-action show">
 		
-	    <form name="loginForm" id="loginForm" onsubmit="return validateLogin()" action="mod_login.php" method="post">
+	    	<form name="loginForm" id="loginForm"  action="mod_login.php" onsubmit="return validateLogin()"  method="post">
+				<!-- --elimina span- -->
 				<span <?php if(isset($_SESSION['erroL']) && ($_SESSION['erroL'] == "Registrazione effettuata!" || $_SESSION['erroL'] == "Email per recupero password inviata!" || $_SESSION['erroL'] == "Password resettata!")){
 		          			echo "class='succ'";
-		          		} else if(isset($_SESSION['erroL'])){
+		          		} else if(isset($_SESSION['erroL'])){ 
 		          			echo "class='erro'";
 		          		}
-		          	?> id="resL"><?php if(isset($_SESSION['erroL'])){ echo $_SESSION['erroL']; } ?></span>
-		    <?php 
-		    	if(isset($_SESSION['erroL'])){ echo "<script>setTimeout(function(){ document.getElementById('resL').removeAttribute('class') }, 5000);</script>"; }
-		     	unset($_SESSION['erroL']);
-		    ?>
-		    <br>
-		    <input type="email" name="email" placeholder="Inserisci la tua email*" required>
-		    <br>
-		    <input type="password" id="pasw" name="pass" placeholder="Inserisci la password*" class="pasw" required><div id="showPaswL" class="mostra" onclick="showPasw('showPaswL', 'pasw')">Mostra</div>
-		    <br>
-				<div id="footerLogin">
-					<p class="obbligatorio">*Campo obbligatorio</p>
-					<br>
-					<input type="checkbox" id="savePasw" name="savePasw" value="savePassword"> <label for="savePasw"> Ricorda la mia password</label>
-					<br>
-					<input type="submit" name="submit" value="ACCEDI" class="button" rel="noopener noreferrer">
-				</div>
-			<a onclick="document.getElementById('popup').style.display='block';" rel="noopener noreferrer" class="dimenticata">Password dimenticata?</a>
-
+						?> id="resL"><?php if(isset($_SESSION['erroL'])){ echo $_SESSION['erroL']; } ?>
+				</span>
+				<?php 
+					if(isset($_SESSION['erroL'])){ echo "<script>setTimeout(function(){ document.getElementById('resL').removeAttribute('class') }, 5000);</script>"; }
+					unset($_SESSION['erroL']);
+				?>
+				<br>
+				<input type="email" id="email" name="email" placeholder="Email*" required>
+				<br>
+				<input type="password" id="pasw" name="pass" placeholder="Password*" class="pasw" required><div id="showPaswL" class="mostra" onclick="showPasw('showPaswL', 'pasw')">Mostra</div>
+				<br>
+					<div id="footerLogin">
+						<p class="obbligatorio">*Campo obbligatorio</p>
+						<br>
+						<input type="checkbox" id="savePasw" name="savePasw" value="savePassword"> <label for="savePasw"> Ricorda la mia password</label>
+						<br>
+						<input type="submit" name="submit" value="ACCEDI" class="button" rel="noopener noreferrer">
+					</div>
+				<a onclick="document.getElementById('popup').style.display='block';" rel="noopener noreferrer" class="dimenticata">Password dimenticata?</a>
 			</form>
 			<!-- ----------- POPUP -------------- -->
-					<div id="popup" class="modal">
-					    <div class="modal-content">
-					    	<form name="richiestaEmail" id="richiestaEmail" onsubmit="return validateEmail()" action="mod_email.php" method="post">
-					    	<div id="popClose" class="popClose" onclick="document.getElementById('popup').style.display='none'">X</div>
-					      <p class="titlePop">PASSWORD DIMENTICATA?</p>
-					      <span <?php if(isset($_SESSION['erroE'])){
-						          			echo "class='erro'";
-						          		}
-						          	?> id="resE"><?php if(isset($_SESSION['erroE'])){ echo $_SESSION['erroE']; } ?></span>
-						    <?php 
-						    	if(isset($_SESSION['erroE'])){ echo "<script>setTimeout(function(){ document.getElementById('resE').removeAttribute('class') }, 5000);</script>"; }
-						     	unset($_SESSION['erroE']);
-						    ?>
-					      <input type="email" name="email" class="popEmail" placeholder="Inserisci la tua email" required>
-					      <br>
-					      <input type="submit" name="submit" value="PROSEGUI" class="popButton" rel="noopener noreferrer">
-					    </form>
-					    </div>
+				<div id="popup" class="modal">
+					<div class="modal-content">
+					    <form name="richiestaEmail" id="richiestaEmail" onsubmit="return validateEmail()" action="mod_email.php" method="post">
+					    	<div id="popClose" class="popClose" onclick="document.getElementById('popup').style.display='none'">X
+							</div>
+								<p class="titlePop">PASSWORD DIMENTICATA?</p>
+								<span <?php if(isset($_SESSION['erroE'])){
+											echo "class='erro'";
+										}
+										?> id="resE"><?php if(isset($_SESSION['erroE'])){ echo $_SESSION['erroE']; } ?>
+								</span>
+									<?php 
+										if(isset($_SESSION['erroE'])){ echo "<script>setTimeout(function(){ document.getElementById('resE').removeAttribute('class') }, 5000);</script>"; }
+										unset($_SESSION['erroE']);
+									?>
+								<input type="email" name="email" class="popEmail" placeholder="Inserisci la tua email" required>
+								<br>
+								<div id="footerLogin">
+									<p class="obbligatorio">*Campo obbligatorio</p>
+									<br>
+									<input type="submit" name="submit" value="PROSEGUI" class="popButton" rel="noopener noreferrer">
+								</div>
+						</form>
 					</div>
-					<!-- ----------------------------------- -->
-	  </div>
+				</div>
+			<!-- ----------------------------------- -->
+	  	</div>
 	</div>
 
 	<footer id="footer">@diritti riservati al Gruppo 2</footer>

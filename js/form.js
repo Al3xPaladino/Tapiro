@@ -10,7 +10,7 @@ function showPasw(idText, idInput) {
 
 let url = window.location.hash;
 let lastPart = url.split('#')[1];
-if(lastPart == "register") formSignup();
+// if(lastPart == "register") formSignup();
 if(lastPart == "email") document.getElementById('popup').style.display = "block";
 
 // Get the modal

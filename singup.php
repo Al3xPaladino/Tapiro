@@ -51,7 +51,7 @@
 		    <input type="password" id="conf" name="confirm" placeholder="Conferma la password*" class="pasw" required><div id="showConfR" class="mostra" onclick="showPasw('showConfR', 'conf')">Mostra</div>
 		    <br>
 				<div id="footerLogin">
-					<label>*Campo obbligatorio</label>
+					<p class="obbligatorio">*Campo obbligatorio</p>
 					<br>
 					<input type="checkbox" id="robot" name="robot" required> <label for="robot"> Non sono un robot</label>
 					<br><br>

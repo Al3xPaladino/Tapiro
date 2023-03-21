@@ -10,6 +10,10 @@ function validateEmail() {
     res.setAttribute("class", "erro");
     res.innerText = "Email non valida!";
     document.forms["richiestaEmail"].reset();
+
+    document.getElementById('resE').removeAttribute("class")
+
+
     setTimeout(function(){ document.getElementById('resE').removeAttribute("class") }, 5000);
     return false;
   }

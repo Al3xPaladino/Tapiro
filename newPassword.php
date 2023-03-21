@@ -57,8 +57,10 @@
 		    <br>
 		    <input type="password" id="conf" name="confirm" placeholder="Conferma la nuova password" required><div id="showConfR" class="mostra" onclick="showConfR()">Mostra</div>
 		    <br>
-				<input type="submit" name="submit" value="REIMPOSTA" class="button reimposta" style="width:180px!important" rel="noopener noreferrer">
-				
+				<div id="footerLogin">
+					<p class="obbligatorio"> *Indica un campo obbligatorio</p> 
+					<input type="submit" name="submit" value="REIMPOSTA" class="button reimposta" style="width:180px!important" rel="noopener noreferrer">
+				</div>
 			</form>
 	  </div>
 	</div>
