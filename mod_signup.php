@@ -30,7 +30,12 @@ if(isset($_POST['firstname'])&&isset($_POST['lastname'])&&isset($_POST['email'])
 				$respo = $sql->execute();
 				if($respo == 1){
 					$_SESSION['erroL'] = "Registrazione effettuata!";
-					header("Location: login.php");
+
+					$_SESSION['Email']=$email;
+					$_SESSION['Nome']=$nome;
+					$_SESSION['Cognome']=$cognome;
+
+					header("Location: index.php");
 				}
 				else{
 					$_SESSION['erroR'] = "L’email o la password sono sbagliati.";

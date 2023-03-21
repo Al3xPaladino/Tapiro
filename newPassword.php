@@ -5,7 +5,7 @@
 		session_start();
 		require 'secure/notForLog.php';
 		if(!isset($_GET['email']) || !isset($_GET['id']))
-			//header('Location: index.php')
+			header('Location: index.php')
 	?>
   <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 	<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
   <link rel="stylesheet" type="text/css" href="css/form.css">
-  <script src="js/validatePassword.js"></script>
+  <script src="js/validate.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
 
 	  <div class="form-action show">
 	    
-	    <form name="resetForm" id="resetForm" onsubmit="return validateForm()" action="mod_reset.php" method="post">
+	    <form name="resetForm" id="resetForm" onsubmit="return valPassword('resP', 'resetForm', 'pass', 'confirm')" action="mod_reset.php" method="post">
 				<p class="ciao">CIAO!</p>
 				<p class="textEmail"><?php if (isset($_GET['email'])) echo $_GET['email'] ?></p>
 				<span <?php if(isset($_SESSION['erroP']) && ($_SESSION['erroP'] == "Registrazione effettuata!" || $_SESSION['erroP'] == "Email per recupero password inviata!" || $_SESSION['erroP'] == "Password resettata!")){
@@ -53,13 +53,13 @@
 		    <br>
 		    <input type="hidden" name="email" value=<?php echo "'".@$_GET['email']."'"; ?>>
 	    	<input type="hidden" name="id" 		value=<?php echo "'".@$_GET['id']."'"; ?>>
-		    <input type="password" id="paswR" name="pass" placeholder="Inserisci la nuova password" class="newPasw" required><div id="showPaswR" class="mostra" onclick="showPaswR()">Mostra</div>
+		    <input type="password" id="paswR" name="pass" onchange="valVoid('resR', 'signupForm', 'pass')" placeholder="Inserisci la nuova password*" class="pasw fontPiccolo" required><div id="showPaswR" class="mostra" onclick="showPasw('showPaswR', 'paswR')">Mostra</div>
 		    <br>
-		    <input type="password" id="conf" name="confirm" placeholder="Conferma la nuova password" required><div id="showConfR" class="mostra" onclick="showConfR()">Mostra</div>
+		    <input type="password" id="conf" name="confirm" onchange="valPassword('resP', 'resetForm', 'pass', 'confirm')" placeholder="Conferma la nuova password*" class="pasw fontPiccolo" required><div id="showConfR" class="mostra" onclick="showPasw('showConfR', 'conf')">Mostra</div>
 		    <br>
 				<div id="footerLogin">
 					<p class="obbligatorio"> *Indica un campo obbligatorio</p> 
-					<input type="submit" name="submit" value="REIMPOSTA" class="button reimposta" style="width:180px!important" rel="noopener noreferrer">
+					<input type="submit" name="submit" value="REIMPOSTA" class="button reg" style="width:180px!important" rel="noopener noreferrer">
 				</div>
 			</form>
 	  </div>

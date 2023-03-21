@@ -15,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
-	<img loading="lazy" draggable="false" onclick="window.location.href='index.php'" src="img/logo_login.svg" class="logo">
+	<img loading="lazy" draggable="false" src="img/logo_login.svg" class="logo">
 	<div class="box-form">
 
 	<!--form-action-->
