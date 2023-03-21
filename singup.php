@@ -8,7 +8,7 @@
 	<META HTTP-EQUIV="Expires" CONTENT="-1">
   	<?php session_start(); require 'secure/notForLog.php'; ?>
   	<link rel="stylesheet" type="text/css" href="css/form.css">
-  	<script src="js/validateRegister.js"></script>
+  	<script src="js/validate.js"></script>
   	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,7 +30,7 @@
 
 	<div id="register" class="form-action show">
 	    
-	    <form name="signupForm" id="signupForm" onsubmit="return validateRegister()" action="mod_signup.php" method="post">
+	    <form name="signupForm" id="signupForm" onsubmit="return valSignup('resR', 'signupForm')" action="mod_signup.php" method="post">
 				<span <?php if(isset($_SESSION['erroR'])){
 		          			echo "class='erro'";
 		          		}
@@ -40,18 +40,18 @@
 		     	unset($_SESSION['erroR']);
 		    ?>
 		    <br>
-		    <input type="text" name="firstname" placeholder="Nome*" required>
+		    <input type="text" name="firstname" onchange="valName('resR', 'signupForm', 'firstname')" placeholder="Nome*" required>
 		    <br>
-		    <input type="text" name="lastname" placeholder="Cognome*" required>
+		    <input type="text" name="lastname" onchange="valName('resR', 'signupForm', 'lastname')" placeholder="Cognome*" required>
 		    <br>
-		    <input type="email" name="email" placeholder="Email*" required>
+		    <input type="email" name="email" onchange="valEmail('resR', 'signupForm', 'email')" placeholder="Email*" required>
 		    <br>
-		    <input type="password" id="paswR" name="pass" placeholder="Password*" class="pasw" required><div id="showPaswR" class="mostra" onclick="showPasw('showPaswR', 'paswR')">Mostra</div>
+		    <input type="password" id="paswR" name="pass" onchange="valVoid('resR', 'signupForm', 'pass')" placeholder="Password*" class="pasw" required><div id="showPaswR" class="mostra" onclick="showPasw('showPaswR', 'paswR')">Mostra</div>
 		    <br>
-		    <input type="password" id="conf" name="confirm" placeholder="Conferma la password*" class="pasw" required><div id="showConfR" class="mostra" onclick="showPasw('showConfR', 'conf')">Mostra</div>
+		    <input type="password" id="conf" name="confirm" onchange="valPassword('resR', 'signupForm', 'pass', 'confirm')" placeholder="Conferma la password*" class="pasw" required><div id="showConfR" class="mostra" onclick="showPasw('showConfR', 'conf')">Mostra</div>
 		    <br>
 				<div id="footerLogin">
-					<label>*Campo obbligatorio</label>
+					<p class="obbligatorio">*Campo obbligatorio</p>
 					<br>
 					<input type="checkbox" id="robot" name="robot" required> <label for="robot"> Non sono un robot</label>
 					<br><br>
