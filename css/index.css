@@ -86,6 +86,16 @@
 	color: #FFFFFF;
 	cursor: pointer;
 }
+.logOsign button:hover {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  color: #1F97FF;
+  border: 1px solid #1F97FF;
+}
+.logOsign button:active {
+  background: #1F97FF33 0% 0% no-repeat padding-box;
+  color: #1F97FF;
+  border: 1px solid #1F97FF;
+}
 .logOsign span{
 	margin-left: 32px;
 	margin-right: 32px;
@@ -168,6 +178,11 @@
 	color: #FFFFFF;
 	cursor: pointer;
 	margin-bottom: 100px;
+}
+.bottone:hover{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  color: #1F97FF;
+  border: 1px solid #1F97FF;
 }
 #foot{
   margin-top: 50px!important;
