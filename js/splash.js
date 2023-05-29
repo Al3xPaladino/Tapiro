@@ -27,7 +27,7 @@ function toLogin(){
   window.location.href = "login.php";
 }
 function toSignup(){
-  window.location.href = "singup.php";
+  window.location.href = "signup.php";
 }
 /* Start of splash screen with library GSAP for the animation */
 if(getCookie("splash") == ""){  // Verification if splash's cookie isset

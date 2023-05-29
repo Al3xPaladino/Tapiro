@@ -255,6 +255,12 @@ input[type="checkbox"]:checked::before {
   border: 6px solid #FFFFFF;
   color: #1F97FF;
 }
+#footerLogin .button:active{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 10px #00000029;
+  border: 6px solid #1F97FF;
+  color: #1F97FF;
+}
 #footerLogin .reg{
   width: 170px;
 }
@@ -426,21 +432,34 @@ input[type="checkbox"]:checked::before {
   width: 95%!important;
 }
 .popButton{
-  margin: auto;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
   background: #1F97FF 0% 0% no-repeat padding-box;
   box-shadow: 0px 3px 10px #00000029;
   border-radius: 37px;
   border: none;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-  letter-spacing: 0.84px;
+  text-align: center!important;
+  font: normal normal bold 21px/34px Montserrat!important;
+  letter-spacing: 0.84px!important;
   color: #FFFFFF;
   cursor: pointer;
   margin-top: 20px;
-  padding: 17px 45px 17px 45px;
+  min-width: 185px!important;
+  min-height: 55px!important;
 }
-
+.popButton:hover{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 10px #00000029;
+  border: 6px solid #FFFFFF;
+  color: #1F97FF;
+}
+.popButton:active{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 10px #00000029;
+  border: 6px solid #1F97FF;
+  color: #1F97FF;
+}
 .titlePop{
   display: block;
   margin-left: auto;

@@ -17,7 +17,7 @@
 <body> 
 	<img loading="lazy" draggable="false" onclick="window.location.href='index.php'" src="img/logo_login.svg" class="logo">
 	<div class="linkTo">
-		<p> Non hai un account? <a href="singup.php" id="aRegister">Registrati</a></p>
+		<p> Non hai un account? <a href="signup.php" id="aRegister">Registrati</a></p>
 	</div>
 	<div class="box-form">
 
@@ -79,7 +79,7 @@
 								<div id="footerLogin">
 									<p class="obbligatorio">*Campo obbligatorio</p>
 									<br>
-									<input type="submit" name="submit" value="PROSEGUI" class="popButton" rel="noopener noreferrer">
+									<input type="submit" name="submit" value="PROSEGUI" class="popButton reg" rel="noopener noreferrer">
 								</div>
 						</form>
 					</div>
